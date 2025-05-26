@@ -233,9 +233,55 @@
         .cta-content .small-text { font-size: 0.9rem; color: #777; margin-top: 1.5rem; }
 
         /* Footer */
-        footer { background-color: #4A5C50; color: #E0E6E3; text-align: center; padding: 2.5rem 0; font-size: 0.9rem; }
-        footer p { margin-bottom: 0.5rem; color: #E0E6E3; }
-        footer a { color: #F5F1E9; }
+        footer {
+            background-color: #4A5C50; /* 深靜謐綠 */
+            color: #E0E6E3; /* 淺灰綠色文字 */
+            text-align: center;
+            padding: 2.5rem 0;
+            font-size: 0.9rem; /* 頁腳基礎字體大小 */
+        }
+        footer p {
+            margin-bottom: 0.5rem;
+            color: #E0E6E3;
+            /* 因為父層 footer 已設定 font-size: 0.9rem;，這裡保持不變 */
+        }
+        footer a {
+            color: #F5F1E9;
+        }
+
+        /* 社群媒體圖示樣式 */
+        .social-icons {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px; /* 圖標之間的間距 */
+        }
+
+        .social-icons a {
+            display: inline-block;
+            line-height: 1; /* 確保連結內部的元素垂直居中 */
+            color: #F5F1E9; /* 圖標顏色 */
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.1);
+            color: #A3B8A1; /* 鼠標懸停時變色 */
+        }
+
+        .social-icons img {
+            /* *** 關鍵調整: 設置為 1em，讓它與父元素的字體大小一致 *** */
+            width: 1em;
+            height: 1em;
+            /* ****************************************************** */
+            display: block; /* 確保圖片不被當作行內元素 */
+            /*
+            如果您需要 SVG 顏色跟隨 `color` 屬性，請確保 SVG 檔案內部 <path fill="currentColor" />
+            如果 SVG 是黑色，想變白色，可以用 filter: brightness(0) invert(1);
+            但通常直接用 currentColor 最方便。
+            */
+        }
 
         /* Responsive Design */
         @media(max-width: 768px) {
